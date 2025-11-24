@@ -39,3 +39,7 @@ Ermöglicht das Einreichen, Verwalten und Finden von verlorenen & gefundenen Geg
 - **JWT Authentication**
 - **REST API Integration** mit Quarkus Backend
 - **LocalStorage** für Token
+
+---
+## 🔗 Backend Repository
+➡️ [Lost & Found Backend (Quarkus)](https://github.com/noahburren/Lost-And-Found-Backend)
