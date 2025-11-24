@@ -8,8 +8,18 @@
     <nav>
       <a routerLink="/items" routerLinkActive="active">Items</a>
       <a routerLink="/items/new" routerLinkActive="active">Neu</a>
-      <a routerLink="/login" routerLinkActive="active">Login</a>
-      <a routerLink="/signup" routerLinkActive="active">Signup</a>
+
+      <!-- Nur für Admin sichtbar -->
+      <a routerLink="/users" routerLinkActive="active" *ngIf="isAdmin()">Users</a>
+
+      <!-- Wenn nicht eingeloggt -->
+      <a routerLink="/login" routerLinkActive="active" *ngIf="!isLoggedIn()">Login</a>
+      <a routerLink="/signup" routerLinkActive="active" *ngIf="!isLoggedIn()">Signup</a>
+
+      <!-- Logout -->
+      <button class="logout-btn" *ngIf="isLoggedIn()" (click)="logout()">
+        Logout
+      </button>
     </nav>
   </header>
 

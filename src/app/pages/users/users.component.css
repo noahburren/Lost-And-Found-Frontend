@@ -1,0 +1,12 @@
+h1 {
+  margin-bottom: 20px;
+}
+
+.user-card {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-card strong {
+  color: #333;
+}

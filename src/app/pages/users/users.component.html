@@ -1,0 +1,7 @@
+<h1>Benutzerübersicht</h1>
+
+<div class="user-list">
+  <div *ngFor="let user of users" class="user-card">
+    <strong>{{ user.name }}</strong> – {{ user.email }}
+  </div>
+</div>
