@@ -1,0 +1,40 @@
+<div class="page">
+  <div class="page-header">
+    <h2>Items</h2>
+    <a routerLink="/items/new" class="btn-primary">Neues Item</a>
+  </div>
+
+  <div *ngIf="loading" class="info">Lade Items...</div>
+
+  <div *ngIf="!loading && !items.length" class="empty">
+    <p>Noch keine Items. Entweder alle super sorgfältig oder keiner nutzt die App.</p>
+  </div>
+
+  <div class="grid" *ngIf="!loading && items.length">
+    <article class="item-card" *ngFor="let item of items">
+      <div class="item-header">
+        <span
+          class="badge"
+          [ngClass]="item.type === 'lost' ? 'badge-lost' : 'badge-found'">
+          {{ item.type === 'lost' ? 'Verloren' : 'Gefunden' }}
+        </span>
+        <h3>{{ item.title }}</h3>
+      </div>
+
+      <p class="description">
+        {{ item.description || 'Keine Beschreibung – classic Faulheit.' }}
+      </p>
+
+      <div class="meta">
+        <span>📍 {{ item.location }}</span>
+        <span>📅 {{ item.date }}</span>
+      </div>
+
+      <div class="footer">
+        <span *ngIf="item.category" class="category-chip">
+          {{ item.category.name }}
+        </span>
+      </div>
+    </article>
+  </div>
+</div>

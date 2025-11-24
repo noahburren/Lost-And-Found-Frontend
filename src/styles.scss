@@ -1,0 +1,113 @@
+/* GLOBAL FIXES */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  color: #111827;
+}
+
+/* SHELL */
+.shell {
+  min-height: 100vh;
+}
+
+/* TOPBAR (GLAS + SICHTBAR + PRETTY AF) */
+.topbar {
+  height: 64px;
+  padding: 0 32px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* BRAND */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.logo-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+}
+
+.brand-name {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  color: #0f172a;
+}
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #1e293b;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 6px 0;
+  position: relative;
+  transition: color 0.2s ease-in-out;
+}
+
+/* Unterstreichungs-Animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background: #2563eb;
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+
+nav a:hover {
+  color: #2563eb;
+}
+
+nav a:hover::after {
+  width: 45%;
+}
+
+/* Active state */
+nav a.active {
+  color: #2563eb;
+}
+
+nav a.active::after {
+  width: 45%;
+}
+
+/* CONTENT */
+.content {
+  padding: 24px 16px 40px;
+}

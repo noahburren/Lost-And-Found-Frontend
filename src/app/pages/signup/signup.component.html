@@ -1,0 +1,54 @@
+<div class="auth-wrapper">
+  <div class="card">
+    <h1>Lost &amp; Found</h1>
+    <h2>Signup</h2>
+
+    <form (ngSubmit)="onSignup()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          [(ngModel)]="name"
+          name="name"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          [(ngModel)]="email"
+          name="email"
+          type="email"
+          required
+          autocomplete="email"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Passwort</label>
+        <input
+          id="password"
+          [(ngModel)]="password"
+          name="password"
+          type="password"
+          required
+          autocomplete="new-password"
+        />
+      </div>
+
+      <button type="submit" [disabled]="loading">
+        {{ loading ? 'Erstelle Account...' : 'Konto erstellen' }}
+      </button>
+    </form>
+
+    <p class="hint">
+      Schon ein Konto?
+      <a routerLink="/login">Zum Login</a>
+    </p>
+
+    <p *ngIf="error" class="error">{{ error }}</p>
+    <p *ngIf="success" class="success">{{ success }}</p>
+  </div>
+</div>
