@@ -35,8 +35,6 @@ export class LoginComponent {
         this.error = 'Login fehlgeschlagen. Check deine Daten.';
       }
     });
-    console.log("EMAIL:", this.email);
-    console.log("PASSWORD:", this.password);
 
   }
 }
